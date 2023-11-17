@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:58:41 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 20:28:13 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:18:50 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main()
 {
-	char const	*s = "Hello";
+	char const	*s = "";
 	char		*sub;
 
 	sub = ft_substr(s, 1, 4);

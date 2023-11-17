@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:05:42 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/17 13:30:45 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:47:45 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,21 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*This is a test that intentionally makes the memory areas overlap*/
+/*
+int	main()
+{
+	char src[25] = "12345678910111213";
+	char testsrc[25] = "12345678910111213";
+
+	ft_memmove(src + 2, src, 10);
+	memmove(testsrc + 2, testsrc, 10);
+	printf("%s\n", src);
+	printf("%s\n", testsrc);
+}
+*/
+
+/*This is prob a bad test, but I'm too scared to remove it*/
 /*
 int	main()
 {
