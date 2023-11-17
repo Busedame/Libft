@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:05:42 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 21:26:46 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:30:45 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	destptr = dest;
 	srcptr = src;
 	j = n - 1;
-	if (dest < src)
+	if (dest > src)
 	{
 		while (j-- > 0)
 			destptr[j] = srcptr[j];
