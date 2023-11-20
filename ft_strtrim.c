@@ -6,13 +6,64 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:21:49 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/17 21:08:33 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:16:21 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+
+static int	ft_s1_start(char const *s1, char const *set)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	j = 0;
+	count = 1;
+	while (s1[i] != '\0' && count > 0)
+	{
+		count = 0;
+		while (set[j] != '\0')
+		{
+			if (s1[i] == set[j])
+			{
+				i++;
+				count++;
+			}
+			else
+				j++;
+		}
+		j = 0;
+	}
+	return (i);
+}
+
+static int	ft_s1_end(char const *s1, char const *set, int k)
+{
+	int	j;
+	int	count;
+
+	j = 0;
+	count = 1;
+	while (k > 0 && count > 0)
+	{
+		count = 0;
+		while (set[j] != '\0')
+		{
+			if (s1[k] == set[j])
+			{
+				k--;
+				count++;
+			}
+			else
+				j++;
+		}
+		j = 0;
+	}
+	return (k);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -20,73 +71,35 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 	int		k;
-	int		setlen;
-	int		count;
 
 	i = 0;
-	setlen = 0;
 	while (s1[i] != '\0')
 		i++;
-	while (set[setlen] != '\0')
-		setlen++;
-	k = i;
-	result = (char *)malloc(k + 1);
+	k = i - 1;
+	i = ft_s1_start(s1, set);
+	k = ft_s1_end(s1, set, k);
+	result = (char *)malloc((k - i) + 1);
 	if (!result)
 		return (NULL);
-	i = 0;
 	j = 0;
-	count = 1;
-	while (s1[i] != '\0')
-	{
-		if (strrchr(&s1[i], &set[j]) != '\0')
-			i++;
-		else
-			break ;
-	}
-	while (s1[k] != s1[0])
-	{
-		if (strrchr(&s1[i], &set[j]) != '\0')
-			i++;
-		else
-			break ;
-	}
-	/*
-	while (count > 0)
-	{
-		count = 0;
-		while (set[j] != set[setlen])
-		{
-			if (s1[i] == set[j])
-			{
-				i++;
-				count++;
-			}
-			else if (s1[k] == set[j])
-			{
-				k--;
-				count++;
-			}
-			j++;
-		}
-		j = 0;
-	}
-	j = 0;
-	*/
-	while (s1[i] <= s1[k])
+	while (i <= k)
 	{
 		result[j] = s1[i];
 		i++;
 		j++;
 	}
+	result[j] = '\0';
 	return (result);
 }
-
+/*
 int	main()
 {
-	char const	*s1 = "aaabbbaHalla ballaisabbaba";
-	char const	*set = "ab";
+	char const	*s1 = "abcd1";
+	char const	*set = "abccccc1";
 	char		*result;
 
 	result = ft_strtrim(s1, set);
 	printf("%s\n", result);
+	free(result);
 }
+*/
