@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:23:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 14:15:52 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:33:13 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	ft_strlcat(char *dest, const char *src, size_t size)
 /*
 int	main()
 {
-	const char *src = "world!!!";
-	const char *srctest = "world!!!";
+	const char *src = "World";
+	const char *srctest = "World";
 	char dest[30] = "Hello, ";
 	char desttest[30] = "Hello, ";
 	size_t size;
@@ -56,8 +56,8 @@ int	main()
 	int	result;
 	int	resulttest;
 
-	size = 30;
-	sizetest = 30;
+	size = 7;
+	sizetest = 7;
 	result = ft_strlcat(dest, src, size);
 	resulttest = strlcat(desttest, srctest, sizetest);
 	printf("%s\n", desttest);

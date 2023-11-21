@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:21:49 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/20 16:16:21 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:55:17 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main()
 {
-	char const	*s1 = "abcd1";
-	char const	*set = "abccccc1";
+	char const	*s1 = "aaaaaaaaaa";
+	char const	*set = "aa";
 	char		*result;
 
 	result = ft_strtrim(s1, set);
