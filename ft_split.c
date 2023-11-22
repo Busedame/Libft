@@ -6,12 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:18:27 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/21 15:12:32 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:40:38 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+//#include <stdio.h>
 
 static int	ft_wordcount(char const *s, char c)
 {
@@ -50,16 +50,13 @@ static char	**ft_fillarray(char **array, char const *s, char c)
 			array[i][j] = '\0';
 			i++;
 			j = 0;
-			k++;
 		}
-		else if (s[k] == c && s[k - 1] == c)
-			k++;
-		else
+		else if (s[k] != c)
 		{
 			array[i][j] = s[k];
 			j++;
-			k++;
 		}
+		k++;
 	}
 	array[i][j] = '\0';
 	array[i + 1] = NULL;
@@ -94,7 +91,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	int		i;
-	int		j;
 	int		k;
 	int		count;
 
@@ -110,17 +106,16 @@ char	**ft_split(char const *s, char c)
 	array = ft_fillarray(array, s, c);
 	return (array);
 }
-
+/*
 int	main()
 {
 	char const	*s;
 	char		c;
 	char		**array;
 	int			i;
-	int			j;
 	int			arraysize;
 
-	s = "Hello,hey,yes,hey,yes,yes,yes";
+	s = "Hello,,,,hey,,,,,,,,,,yes,hey,yes,yes,yes";
 	c = ',';
 	array = ft_split(s, c);
 	arraysize = 0;
@@ -136,6 +131,6 @@ int	main()
 			i++;
 		}
 	}
-	free(array[i]);
 	free(array);
 }
+*/
