@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:24:41 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/21 14:54:53 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:17:46 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
 /*
 int	main()
 {

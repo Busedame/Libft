@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:16:22 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 17:43:50 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:35:01 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main()
 	size_t			size;
 
 	i = 0;
-	nmemb = 0;
-	size = 0;
+	nmemb = 20;
+	size = 20;
 	arr = ((unsigned char *)ft_calloc(nmemb, size));
 	arrtest = ((unsigned char *)calloc(nmemb, size));
 	if (arr == NULL)

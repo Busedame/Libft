@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 12:28:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 15:15:26 by nholbroo         ###   ########.fr       */
+/*   Created: 2023/11/23 16:33:28 by nholbroo          #+#    #+#             */
+/*   Updated: 2023/11/23 16:57:41 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
+#include <unistd.h>
+//#include <fcntl.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	write (fd, &c, 1);
 }
 /*
 int	main()
 {
-	int	i;
-	int	j;
+	int	fd;
 
-	i = ft_strlen("Hello");
-	j = strlen("Hello");
-	printf("%d\n", i);
-	printf("%d\n", j);
+	fd = open("test.txt", O_WRONLY | O_APPEND);
+	fd = open("test.txt", 666);
+	ft_putchar_fd('e', fd);
+	close(fd);
 }
 */

@@ -6,18 +6,23 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:42:00 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/22 17:41:33 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:14:03 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 static int	ft_digitcount(int n)
 {
 	int	count;
 
 	count = 0;
+	if (n < 0)
+	{
+		count++;
+		n *= -1;
+	}
 	while (n > 0)
 	{
 		n = n / 10;
@@ -26,69 +31,54 @@ static int	ft_digitcount(int n)
 	return (count);
 }
 
-static char	*ft_revstring(char *nptr, int i)
+static char	*ft_conversion(char *nptr, int n, int end)
 {
-	int		len;
-	char	*temp;
-	int		j;
+	int	start;
 
-	j = 0;
-	len = i;
-	temp = (char *)malloc(sizeof(char) * len + 1);
-	if (!temp)
-		return (NULL);
-	i--;
-	if (nptr[0] == '-')
+	start = 0;
+	if (n < 0)
 	{
-		temp[j] = '-';
-		j++;
+		nptr[start] = '-';
+		n *= -1;
+		start = 1;
 	}
-	while (j < len)
+	nptr[end] = '\0';
+	end--;
+	while (end >= start)
 	{
-		if (nptr[i] == nptr[0] && nptr[0] == '-')
-			break ;
-		temp[j++] = nptr[i--];
+		nptr[end] = n % 10 + '0';
+		n = n / 10;
+		end--;
 	}
-	temp[j] = '\0';
-	return (temp);
+	return (nptr);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*nptr;
-	char	*temp;
-	int		i;
-	int		j;
 	int		digcount;
 
-	i = 0;
-	j = 0;
 	digcount = ft_digitcount(n);
-	if (n < 0)
-		digcount++;
+	if (n == 0)
+	{
+		nptr = (char *)malloc(2);
+		nptr[0] = '0';
+		nptr[1] = '\0';
+		return (nptr);
+	}
 	nptr = (char *)malloc(sizeof(char) * digcount + 1);
 	if (!nptr)
 		return (NULL);
-	if (n < 0)
-	{
-		nptr[i++] = '-';
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		nptr[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	nptr[i] = '\0';
-	temp = ft_revstring(nptr, i);
-	return (temp);
+	nptr = ft_conversion(nptr, n, digcount);
+	return (nptr);
 }
-
+/*
 int	main()
 {
 	char	*nptr;
 
-	nptr = ft_itoa(123456);
+	nptr = ft_itoa(12346);
 	printf("%s\n", nptr);
 	free(nptr);
 }
+*/

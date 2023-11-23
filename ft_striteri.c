@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 12:28:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 15:15:26 by nholbroo         ###   ########.fr       */
+/*   Created: 2023/11/23 16:07:35 by nholbroo          #+#    #+#             */
+/*   Updated: 2023/11/23 16:32:33 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-//#include <string.h>
-
-int	ft_strlen(char *str)
+/*
+void	f(unsigned int i, char *s)
 {
-	int	i;
+	if (s[i] >= 'a' && s[i] <= 'z') 
+		s[i] -= 32;
+	else if (s[i] >= 'A' && s[i] <= 'Z')
+		s[i] += 32;
+	else
+		s[i] = '0';
+}
+*/
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
 		i++;
-	return (i);
+	}
 }
 /*
 int	main()
 {
-	int	i;
-	int	j;
+	char	s[6] = "Hello";
 
-	i = ft_strlen("Hello");
-	j = strlen("Hello");
-	printf("%d\n", i);
-	printf("%d\n", j);
+	ft_striteri(s, &f);
+	printf("%s\n", s);
 }
 */
