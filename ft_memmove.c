@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:05:42 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 18:36:56 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:33:47 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*destptr;
 	const unsigned char	*srcptr;
 
+	if (dest == NULL || src == NULL || n == 0)
+		return (dest);
 	i = 0;
+	j = n;
 	destptr = dest;
 	srcptr = src;
-	j = n - 1;
 	if (dest > src)
 	{
 		while (j-- > 0)
@@ -54,7 +56,6 @@ int	main()
 	printf("%s\n", testsrc);
 }
 */
-
 /*This is prob a bad test, but I'm too scared to remove it*/
 /*
 int	main()
