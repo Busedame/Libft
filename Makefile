@@ -6,7 +6,7 @@
 #    By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 18:21:29 by nholbroo          #+#    #+#              #
-#    Updated: 2023/11/23 17:55:17 by nholbroo         ###   ########.fr        #
+#    Updated: 2023/11/28 13:32:09 by nholbroo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,16 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) $(OPTIONS) $< -o $@
 
+test: $(OBJ)
+	$(CC) test.c $^ -lbsd
+	./a.out
+
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f *.txt
 
 re: fclean all
 
