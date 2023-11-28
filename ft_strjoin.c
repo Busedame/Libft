@@ -6,12 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:29:25 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/17 16:20:59 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:20:55 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
 
 static char	*ft_strjoin_cat_part(char const *s1, char const *s2, char *result)
 {
@@ -53,15 +53,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strjoin_cat_part(s1, s2, result);
 	return (result);
 }
-/*
-int	main()
-{
-	char const	*s1 = "Hello, ";
-	char const	*s2 = "world!";
-	char		*result;
-
-	result = ft_strjoin(s1, s2);
-	printf("%s\n", result);
-	free(result);
-}
-*/

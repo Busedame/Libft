@@ -6,24 +6,13 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:21:17 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 16:06:34 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:35:16 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
-/*
-char	f(unsigned int i, char c)
-{
-	if (c >= 'a' && c <= 'z') 
-		c -= 32;
-	else if (c >= 'A' && c <= 'Z')
-		c += 32;
-	else
-		c = '0';
-	return (c);
-}
-*/
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;
@@ -45,15 +34,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-/*
-int	main()
-{
-	char		*result;
-	const char	*str = "Hello";
-	int			i;
-
-	result = ft_strmapi(str, &f);
-	printf("%s\n", result);
-	free(result);
-}
-*/

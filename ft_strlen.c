@@ -6,31 +6,19 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:28:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 15:15:26 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:18:39 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
+#include "libft.h"
+#include <stddef.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
-/*
-int	main()
-{
-	int	i;
-	int	j;
-
-	i = ft_strlen("Hello");
-	j = strlen("Hello");
-	printf("%d\n", i);
-	printf("%d\n", j);
-}
-*/

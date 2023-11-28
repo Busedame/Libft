@@ -6,12 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:25:21 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 18:10:51 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:52:41 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
-//#include <fcntl.h>
 
 static void	ft_nbwrite(char *str, int n, int fd)
 {
@@ -50,15 +50,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_nbwrite(str, n, fd);
 }
-/*
-int	main()
-{
-	int	n;
-	int	fd;
-
-	n = 214748364;
-	fd = open("test.txt", O_RDWR | O_CREAT, 0666);
-	ft_putnbr_fd(n, fd);
-	close(fd);
-}
-*/

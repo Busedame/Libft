@@ -6,15 +6,14 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:41:16 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 17:57:48 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/27 20:18:12 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include <errno.h>
-//#include <string.h>
-//#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -40,20 +39,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-int	main()
-{
-	char 		*dup;
-	char		*testdup;
-	char		*errorcheck;
-
-	dup = ft_strdup("Hello");
-	testdup = strdup("Hello");
-	errorcheck = strerror(errno);
-	printf("%s\n", errorcheck);
-	printf("%s\n", dup);
-	printf("%s\n", testdup);
-	free(dup);
-	free(testdup);
-}
-*/

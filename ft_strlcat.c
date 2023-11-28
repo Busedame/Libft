@@ -6,15 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:23:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/20 21:33:13 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:43:21 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-//#include <string.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <bsd/string.h>
 
 int	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -44,29 +41,3 @@ int	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	return (totallen);
 }
-/*
-int	main()
-{
-	const char *src = "World";
-	const char *srctest = "World";
-	char dest[30] = "Hello, ";
-	char desttest[30] = "Hello, ";
-	size_t size;
-	size_t sizetest;
-	int	result;
-	int	resulttest;
-
-	size = 7;
-	sizetest = 7;
-	result = ft_strlcat(dest, src, size);
-	resulttest = strlcat(desttest, srctest, sizetest);
-	printf("%s\n", desttest);
-	printf("%s\n", srctest);
-	printf("%s\n", dest);
-	printf("%s\n", src);
-	printf("%d\n", result);
-	printf("%d\n", resulttest);
-	return (0);
-}
-*/
-/*If it won't compile, use -lbsd flags while compiling*/

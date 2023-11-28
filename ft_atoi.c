@@ -6,12 +6,11 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:35:52 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 14:15:04 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/27 20:07:13 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -39,15 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-/*
-int	main(void)
-{
-	int	i;
-	int	j;
-
-	i = ft_atoi("-2147483649");
-	j = atoi("-2147483649");
-	printf("%d\n", i);
-	printf("%d\n", j);
-}
-*/

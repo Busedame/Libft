@@ -6,12 +6,13 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:18:27 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/22 14:40:38 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:30:11 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
+#include <stdio.h>
 
 static int	ft_wordcount(char const *s, char c)
 {
@@ -19,16 +20,14 @@ static int	ft_wordcount(char const *s, char c)
 	int	count;
 
 	i = 0;
-	count = 1;
+	count = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-		{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
 			count++;
-			while (s[i] == c)
-				i++;
-		}
-		else
+		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
 	return (count);
@@ -36,55 +35,70 @@ static int	ft_wordcount(char const *s, char c)
 
 static char	**ft_fillarray(char **array, char const *s, char c)
 {
-	int	i;
+	int	cwi;
 	int	j;
 	int	k;
 
-	i = 0;
+	cwi = 0;
 	j = 0;
 	k = 0;
 	while (s[k] != '\0')
 	{
-		if (s[k] == c && s[k - 1] != c)
+		if (k > 0 && s[k] == c && s[k - 1] != c)
 		{
-			array[i][j] = '\0';
-			i++;
+			array[cwi++][j] = '\0';
 			j = 0;
 		}
 		else if (s[k] != c)
 		{
-			array[i][j] = s[k];
+			array[cwi][j] = s[k];
 			j++;
 		}
 		k++;
 	}
-	array[i][j] = '\0';
-	array[i + 1] = NULL;
+	if (j != 0)
+		array[cwi++][j] = '\0';
+	array[cwi] = NULL;
 	return (array);
 }
 
-static char	**ft_allocatestrings(char **array, char const *s, char c, int count)
+static char	**ft_allocatestrings(char **array, char *s, char c, int count)
 {
-	int	i;
-	int	k;
+	int		cwi;
+	char	*cwstart;
 
-	i = 0;
-	k = 0;
-	while (i < count)
+	cwi = 0;
+	while (*s == c && *s != '\0')
+		s++;
+	while (cwi < count)
 	{
-		while (s[k] != c)
-			k++;
-		array[i] = (char *)malloc((k + 1) * sizeof(char));
-		if (!array[i])
+		cwstart = s;
+		while (*s != c && *s != '\0')
+			s++;
+		array[cwi] = (char *)malloc((s - cwstart + 1) * sizeof(char));
+		if (!array[cwi])
 		{
-			free(array[i]);
+			while (--cwi >= 0)
+				free(array[cwi]);
+			free(array);
 			return (NULL);
 		}
-		while (s[k] == c)
-			k++;
-		i++;
+		cwi ++;
+		while (*s == c && *s != '\0')
+			s++;
 	}
 	return (array);
+}
+
+static char	**empty(void)
+{
+	char	**res;
+
+	res = malloc(sizeof(char *));
+	if (!res)
+		return (0);
+	res[0] = 0;
+	return (res);
 }
 
 char	**ft_split(char const *s, char c)
@@ -97,40 +111,14 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	k = 0;
 	if (!*s)
-		return (malloc(1));
+		return (empty());
 	count = ft_wordcount(s, c);
 	array = (char **)malloc((count + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	array = ft_allocatestrings(array, s, c, count);
+	array = ft_allocatestrings(array, (char *)s, c, count);
+	if (!array)
+		return (0);
 	array = ft_fillarray(array, s, c);
 	return (array);
 }
-/*
-int	main()
-{
-	char const	*s;
-	char		c;
-	char		**array;
-	int			i;
-	int			arraysize;
-
-	s = "Hello,,,,hey,,,,,,,,,,yes,hey,yes,yes,yes";
-	c = ',';
-	array = ft_split(s, c);
-	arraysize = 0;
-	while (array[arraysize] != NULL)
-		arraysize++;
-	i = 0;
-	if (arraysize > 0)
-	{
-		while (i < arraysize)
-		{
-			printf("%s\n", array[i]);
-			free(array[i]);
-			i++;
-		}
-	}
-	free(array);
-}
-*/

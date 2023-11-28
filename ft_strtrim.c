@@ -6,12 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:21:49 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/21 14:55:17 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:24:11 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-//#include <stdio.h>
+#include "libft.h"
 
 static int	ft_s1_start(char const *s1, char const *set)
 {
@@ -78,7 +78,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	k = i - 1;
 	i = ft_s1_start(s1, set);
 	k = ft_s1_end(s1, set, k);
-	result = (char *)malloc((k - i) + 1);
+	if (i > k)
+		return (ft_strdup(""));
+	result = (char *)malloc((k - i) + 2);
 	if (!result)
 		return (NULL);
 	j = 0;
@@ -91,15 +93,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result[j] = '\0';
 	return (result);
 }
-/*
-int	main()
-{
-	char const	*s1 = "aaaaaaaaaa";
-	char const	*set = "aa";
-	char		*result;
-
-	result = ft_strtrim(s1, set);
-	printf("%s\n", result);
-	free(result);
-}
-*/

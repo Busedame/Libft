@@ -6,14 +6,14 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:42:00 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 14:14:03 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:31:44 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
 
-static int	ft_digitcount(int n)
+static int	ft_digitcount(long n)
 {
 	int	count;
 
@@ -31,7 +31,7 @@ static int	ft_digitcount(int n)
 	return (count);
 }
 
-static char	*ft_conversion(char *nptr, int n, int end)
+static char	*ft_conversion(char *nptr, long n, int end)
 {
 	int	start;
 
@@ -57,11 +57,15 @@ char	*ft_itoa(int n)
 {
 	char	*nptr;
 	int		digcount;
+	long	nbr;
 
+	nbr = (long) n;
 	digcount = ft_digitcount(n);
 	if (n == 0)
 	{
 		nptr = (char *)malloc(2);
+		if (!nptr)
+			return (NULL);
 		nptr[0] = '0';
 		nptr[1] = '\0';
 		return (nptr);
@@ -72,13 +76,3 @@ char	*ft_itoa(int n)
 	nptr = ft_conversion(nptr, n, digcount);
 	return (nptr);
 }
-/*
-int	main()
-{
-	char	*nptr;
-
-	nptr = ft_itoa(12346);
-	printf("%s\n", nptr);
-	free(nptr);
-}
-*/

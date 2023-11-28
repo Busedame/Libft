@@ -6,13 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:34:16 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/16 18:20:01 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:19:33 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-//#include <string.h>
-//#include <stdio.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -30,15 +29,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-int	main()
-{
-	char	ptr[50];
-	char	str[50];
-
-	ft_memset(ptr, 'H', 20);
-	memset(str, 'H', 20);
-	printf("%s\n", ptr);
-	printf("%s\n", str);
-}
-*/

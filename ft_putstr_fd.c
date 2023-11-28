@@ -6,12 +6,12 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:58:00 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/23 18:11:48 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:49:07 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
-//#include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -24,14 +24,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-/*
-int	main()
-{
-	char	*s = "Hello";
-	int		fd;
-
-	fd = open("test.txt", O_WRONLY | O_CREAT);
-	ft_putstr_fd(s, fd);
-	close(fd);
-}
-*/
