@@ -630,11 +630,3 @@ int	main(void)
  	test_ft_putnbr_fd();
 }
 
-//TODO: 
-//1. Finish rest of the test functions (Starting from part 2).
-//2. Make a makefile with extra test functions.
-//3. Tidy up all your external testing functions.
-//4. Fix possible Norminette errors and test all functions again.
-//5. Check that everything actually still works and no libraries are missing.
-//6. Clone GIT repository and push everything.
-//7. Submit and enjoy!!! Get those evals gurl
