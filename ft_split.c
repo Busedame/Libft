@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:18:27 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/28 12:30:11 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:07:32 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,8 @@ static char	**empty(void)
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		i;
-	int		k;
 	int		count;
 
-	i = 0;
-	k = 0;
 	if (!*s)
 		return (empty());
 	count = ft_wordcount(s, c);
