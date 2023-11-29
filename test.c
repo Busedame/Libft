@@ -412,7 +412,7 @@ void	test_ft_substr(void)
 
 	sub = ft_substr(s, 9, 10);
 	printf("\n");
-	printf("===========TESTING FT_STRDUP==========\n");
+	printf("===========TESTING FT_SUBSTR==========\n");
 	printf("Original string: %s\n", s);
 	printf("My substring: %s\n", sub);
 	free(sub);
