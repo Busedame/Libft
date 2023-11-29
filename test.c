@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:36:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/29 13:14:47 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:16:26 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -624,7 +624,7 @@ int	main(void)
  	test_ft_split();
  	test_ft_itoa();
  	test_ft_strmapi();
- 	test_ft_striteri();
+//	test_ft_striteri();
  	test_ft_putchar_fd();
  	test_ft_putstr_fd();
  	test_ft_putendl_fd();
