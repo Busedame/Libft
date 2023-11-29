@@ -57,10 +57,8 @@ char	*ft_itoa(int n)
 {
 	char	*nptr;
 	int		digcount;
-	long	nbr;
-
-	nbr = (long) n;
-	digcount = ft_digitcount(n);
+	
+	digcount = ft_digitcount((long) n);
 	if (n == 0)
 	{
 		nptr = (char *)malloc(2);
@@ -73,6 +71,6 @@ char	*ft_itoa(int n)
 	nptr = (char *)malloc(sizeof(char) * digcount + 1);
 	if (!nptr)
 		return (NULL);
-	nptr = ft_conversion(nptr, n, digcount);
+	nptr = ft_conversion(nptr, (long) n, digcount);
 	return (nptr);
 }

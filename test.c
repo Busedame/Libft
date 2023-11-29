@@ -394,14 +394,11 @@ void	test_ft_strdup(void)
 {
 	char 		*dup;
 	char		*testdup;
-	char		*errorcheck;
 
 	dup = ft_strdup("Hello");
 	testdup = strdup("Hello");
-	errorcheck = strerror(errno);
 	printf("\n");
 	printf("===========TESTING FT_STRDUP==========\n");
-	printf("Error status from my function: %s\n", errorcheck);
 	printf("My function: %s\n", dup);
 	printf("Original function: %s\n", testdup);
 	free(dup);

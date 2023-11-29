@@ -20,7 +20,6 @@
 #include <string.h>
 #include <strings.h>
 #include <bsd/string.h>
-#include <errno.h>
 #include <unistd.h>
 #include <fcntl.h>
 
