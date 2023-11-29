@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:36:48 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/28 13:32:04 by nholbroo         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:14:47 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -514,7 +514,10 @@ void	test_ft_strmapi(void)
 	printf("Result: %s\n", result);
 	free(result);
 }
-
+// The ft_striteri-function is not being tested here, because 
+// the name of the function that is being pointed to is conflicting
+// with the previous one, and they have different arguments.
+/*
 static void	f2(unsigned int i, char *s)
 {
 	if (s[i] >= 'a' && s[i] <= 'z') 
@@ -534,6 +537,7 @@ void	test_ft_striteri(void)
 	printf("===========TESTING FT_STRITERI==========\n");
 	printf("Result: %s\n", s);
 }
+*/
 
 void	test_ft_putchar_fd(void)
 {
