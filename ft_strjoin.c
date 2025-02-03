@@ -6,13 +6,17 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:29:25 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/28 12:20:55 by nholbroo         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:09:49 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
+/*
+Helper function for ft_strjoin(). This is where the copying happens.
+@param i Used for indexing of string result and string s1.
+@param j Used for indexing of string s2.
+*/
 static char	*ft_strjoin_cat_part(char const *s1, char const *s2, char *result)
 {
 	int	i;
@@ -35,6 +39,23 @@ static char	*ft_strjoin_cat_part(char const *s1, char const *s2, char *result)
 	return (result);
 }
 
+/*
+Which function:
+	Not a standard function in C.
+Definition:
+	The ft_strjoin() function concatenates two strings (s1 and s2), and returns
+	a concatenated string (result).
+	E.g.
+	s1 = "Hello, "
+	s2 = "world!"
+	result = "Hello, world!"
+Return values:
+	Returns a dynamically allocated string containing s1 and s2.
+	Upon memory allocation failure, returns NULL.
+@param i Used to calculate s1 length.
+@param j Used to calculate s2 length.
+@param result Stores the final result (string s1 and s2 joined together).
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;

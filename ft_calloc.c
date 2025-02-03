@@ -6,7 +6,7 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:16:22 by nholbroo          #+#    #+#             */
-/*   Updated: 2025/01/30 13:53:23 by nholbroo         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:36:58 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 Which function:
 	Equivalent to the function "calloc" in stdlib.h.
 Definition:
-	The  bzero()  function  erases  the  data  in the n bytes of the memory
-	starting at the location pointed to by s, by writing zeros (bytes  con‐
-	taining '\0') to that area.
+	The calloc() function allocates memory for an array of  nmemb  elements
+	of size bytes each and returns a pointer to the allocated memory.  The
+	memory is set to zero.
 Return values:
-	None.
-@param s A pointer to the start location of the memory area.
-@param n Length of the memory area to be erased.
-@param ptr 
+	If nmemb or size is 0, then calloc() returns
+	either NULL, or a unique pointer value that can later be successfully
+	passed to free().
+	If the multiplication of nmemb and size would result in integer overflow, 
+	then calloc() returns an error.
+@param nmemb How many elements.
+@param size How many bytes is each element.
+@param arr The allocated array to be returned.
 */
 void	*ft_calloc(size_t nmemb, size_t size)
 {

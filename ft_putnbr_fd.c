@@ -6,13 +6,19 @@
 /*   By: nholbroo <nholbroo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:25:21 by nholbroo          #+#    #+#             */
-/*   Updated: 2023/11/28 12:52:41 by nholbroo         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:05:34 by nholbroo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
+/*
+Helper function for ft_putnbr_fd(). This is where the actual conversion and
+writing happens.
+@param str The string that will store the converted number.
+@param n The integer value to be converted and written.
+@param fd The file descriptor (1 for stdout, 2 for stderr, etc.)
+*/
 static void	ft_nbwrite(char *str, int n, int fd)
 {
 	int	i;
@@ -29,6 +35,20 @@ static void	ft_nbwrite(char *str, int n, int fd)
 		write(fd, &str[i--], 1);
 }
 
+/*
+Which function:
+	Not a standard function in C.
+Definition:
+	The ft_putnbr_fd() function writes a number of type integer to the file 
+	descriptor (fd). It converts the number from integer to ascii, and then
+	writes it to fd.
+Return values:
+	None.
+@param n The integer value to be converted and written.
+@param fd The file descriptor (1 for stdout, 2 for stderr, etc.)
+@param str The string that will store the converted number. Statically allocated
+to 12 bytes, to be able to handle all possible integer values.
+*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	str[12];
