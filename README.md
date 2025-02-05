@@ -62,7 +62,7 @@ Ensure that you have both your main project and the `libft` library in the same 
 
   1. **Path to the libft project**:
      ```makefile
-     LIBFT_PATH = ./libft
+     LIBFT_PATH = <path_to_libft_directory>
      ```
 
   2. **Link the libft.a library**:
