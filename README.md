@@ -49,3 +49,31 @@ Ran into some issues trying to compile on my MacBook, but found a fix.
    ```bash
    make
    make test
+
+---
+
+## **Including Libft in your project**
+Ensure that you have both your main project and the `libft` library in the same directory or organized in separate directories. You will need the path to your `libft` directory to link it in the `Makefile`.
+
+- In header file: Include "libft.h"
+
+- In Makefile:
+1. **Path to the libft project**
+LIBFT_PATH = ./libft
+2. **Link the libft.a library**
+LIBFT = $(LIBFT_PATH)/libft.a
+LIBS = -L$(LIBFT_PATH) -lft
+3. **Compile the project and link with libft**
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBS)
+4. **# Ensure that libft is compiled during the build process**
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_PATH)
+5. **Clean up object files**
+clean:
+	rm -f $(OBJ)
+	$(MAKE) -C $(LIBFT_PATH) clean
+   **Clean up everything (object files, executables, and libft.a)**
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_PATH) fclean
