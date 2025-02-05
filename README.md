@@ -10,7 +10,8 @@ The project aims to get a deeper understanding of what is happening under the ho
 ## 🧰 **Included Files**  
 - All the functions.
 - A `Makefile`.
-- A header file that includes some basic tests of all functions.
+- A header file.
+- A test.c file with implementations of simple tests for each function.
 
 ---
 
