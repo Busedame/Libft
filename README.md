@@ -22,31 +22,27 @@ The project aims to get a deeper understanding of what is happening under the ho
    ```bash
    make
 
-bash
-Kopier
-make
-Compile and run test:
+Compile and run test
 Run the tests using:
-
 bash
 Kopier
 make test
 🍏 Mac
 Ran into some issues trying to compile on my MacBook, but found a fix.
 
-Step 1:
+Step 1
 
 Remove #include <bsd/string.h> from the header file.
 Remove the -lbsd flag from the Makefile.
-Step 2:
+Step 2
 
-Compile the library:
+Compile the library
 Run the following command:
 
 bash
 Kopier
 make
-Compile and run test:
+Compile and run test
 Run the tests using:
 
 bash
