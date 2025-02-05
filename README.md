@@ -36,7 +36,7 @@ Ran into some issues trying to compile on my MacBook, but found a fix.
 
 **Step 2**  
 - **Compile the library or tests**  
-   Run the following commands:  
+   Run either of the following commands:  
    ```bash
    make
    make test
