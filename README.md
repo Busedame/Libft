@@ -1,4 +1,4 @@
-# 🎉 **Libft - First Project in the Core Curriculum of 42Berlin!**
+# 🎉 **Libft - First Project in the Core Curriculum of 42 Berlin!**
 
 ## 🚀 **Project Overview**  
 The project aims to get a deeper understanding of what is happening under the hood of the standard functions in C, like `calloc`, `strlcat`, `memmove`, etc. My functions are equivalent to their corresponding functions, except for handling `errno` statuses. Some of the functions are not standard functions in C, but still very useful!  
