@@ -31,7 +31,7 @@ git clone https://github.com/busedame/libft/ Libft && cd Libft
    Run the following command to compile the library:  
    ```bash
    make
-2. **Compile and run test**  
+2. **Compile and run test**:
    Run the tests using:  
    ```bash
    make test
@@ -39,11 +39,11 @@ git clone https://github.com/busedame/libft/ Libft && cd Libft
 ### 🍏 **Mac**  
 Ran into some issues trying to compile on my MacBook, but found a fix.
 
-**Step 1**  
+**Step 1**:
 - Remove `#include <bsd/string.h>` from the header file.  
 - Remove the `-lbsd` flag from the `Makefile`.
 
-**Step 2**  
+**Step 2**:
 - **Compile the library or tests**  
    Run either of the following commands:  
    ```bash
@@ -97,7 +97,7 @@ Ensure that you have both your main project and the `libft` library in the same 
          $(MAKE) -C $(LIBFT_PATH) fclean
      ```
 
-**Example of Makefile**
+**Example of Makefile**:
 ```bash
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
