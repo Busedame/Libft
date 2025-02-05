@@ -37,7 +37,7 @@ git clone https://github.com/busedame/libft/ Libft && cd Libft
    make test
 
 ### 🍏 **Mac**  
-Ran into some issues trying to compile on my MacBook, but this seems to work:
+Ran into some issues trying to compile on MacOS, but this seems to work:
 
 **Step 1**
 - Remove `#include <bsd/string.h>` from the header file.  
