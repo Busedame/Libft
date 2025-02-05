@@ -15,6 +15,15 @@ The project aims to get a deeper understanding of what is happening under the ho
 
 ---
 
+## 🧑‍💻 **Cloning the Repository**
+
+To get started, first clone the repository to your local machine.
+This command will clone the repo, and move to the right directory.
+```bash
+git clone https://github.com/busedame/libft/ Libft && cd Libft
+
+---
+
 ## 🖥️ **How to Compile and Run**  
 
 ### 💻 **Linux**  
