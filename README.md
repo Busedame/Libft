@@ -17,8 +17,8 @@ The project aims to get a deeper understanding of what is happening under the ho
 
 ## 🧑‍💻 **Cloning the Repository**
 
-To get started, first clone the repository to your local machine.
-This command will clone the repo, and move to the right directory.
+To get started, first clone the repository.
+This command will clone the repo, and move you to the right directory:
 ```bash
 git clone https://github.com/busedame/libft/ Libft && cd Libft
 ```
@@ -37,13 +37,13 @@ git clone https://github.com/busedame/libft/ Libft && cd Libft
    make test
 
 ### 🍏 **Mac**  
-Ran into some issues trying to compile on my MacBook, but found a fix.
+Ran into some issues trying to compile on my MacBook, but this seems to work:
 
-**Step 1**:
+**Step 1**
 - Remove `#include <bsd/string.h>` from the header file.  
 - Remove the `-lbsd` flag from the `Makefile`.
 
-**Step 2**:
+**Step 2**
 - **Compile the library or tests**  
    Run either of the following commands:  
    ```bash
