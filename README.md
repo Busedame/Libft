@@ -97,3 +97,54 @@ Ensure that you have both your main project and the `libft` library in the same 
          $(MAKE) -C $(LIBFT_PATH) fclean
      ```
 
+**Example of Makefile**
+```bash
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+OPTIONS = -c
+
+# Path to the libft project
+LIBFT_PATH = ./libft
+
+# Source files for your project
+SRC = src/main.c
+
+# Object files for your project
+OBJ = $(SRC:.c=.o)
+
+# Final executable name
+NAME = my_project
+
+# Link the libft.a library
+LIBFT = $(LIBFT_PATH)/libft.a
+LIBS = -L$(LIBFT_PATH) -lft
+
+# All: Compile both libft and your project
+all: $(NAME)
+
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBS)
+
+# Compile .c files to .o object files
+%.o: %.c
+	$(CC) $(CFLAGS) $(OPTIONS) $< -o $@
+
+# Ensure that libft is compiled during the build process
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_PATH)
+
+# Clean up object files
+clean:
+	rm -f $(OBJ)
+	$(MAKE) -C $(LIBFT_PATH) clean
+
+# Clean up everything (object files, executables, and libft.a)
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_PATH) fclean
+
+# Rebuild everything (clean and then compile both libft and your project)
+re: fclean all
+
+.PHONY: all clean fclean re
+```
