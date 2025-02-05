@@ -20,7 +20,7 @@ The project aims to get a deeper understanding of what is happening under the ho
 To get started, first clone the repository.
 This command will clone the repo, and move you to the right directory:
 ```bash
-git clone https://github.com/busedame/libft/ Libft && cd Libft
+git clone https://github.com/busedame/libft/ libft && cd libft
 ```
 ---
 
