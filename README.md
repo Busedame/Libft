@@ -52,7 +52,7 @@ Ran into some issues trying to compile on my MacBook, but found a fix.
 
 ---
 
-##🔗**Including Libft in Your Project**
+## 🔗**Including Libft in Your Project**
 
 Ensure that you have both your main project and the `libft` library in the same directory or organized in separate directories. You will need the path to your `libft` directory to link it in the `Makefile`.
 
