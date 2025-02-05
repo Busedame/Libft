@@ -11,8 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
+/*
+Which function:
+	Not a standard function in C.
+Definition:
+	The ft_strmapi() function takes a string s and a function f, and
+	applies f to all positions of string s.
+	Function f could for instance be declared like this:
+	char foo(unsigned int i, char c);
+Return values:
+	Upon success, returns the modified string result.
+	Upon memory allocation failure, returns NULL.
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;

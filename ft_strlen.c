@@ -11,8 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
+/*
+Which function:
+	Equivalent to the function "strlen" in string.h.
+Definition:
+	The strlen() computes the length of string str.
+	Parameter str must be a valid pointer, will segfault if NULL pointer
+	is passed.
+Return values:
+	Returns the length of string str.
+*/
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;

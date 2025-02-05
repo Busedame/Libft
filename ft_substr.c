@@ -10,12 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <limits.h>
-#include <stdint.h>
 #include "libft.h"
-#include <stdlib.h>
 
+/*
+Which function:
+	Not a standard function in C.
+Definition:
+	The ft_substr() function take a string s, a start position and
+	a length, and returns a portion of string s (starting from start
+	position up until length).
+	E.g.
+	s1 = "abcdef";
+	start = 1;
+	len = 2;
+	sub = "bc";
+Return values:
+    Upon success, returns the substring of s1.
+	Upon memory allocation failure, returns NULL.
+@param i Start position of string s (original).
+@param j Start position of string sub (substring).
+@param start Start position of string s (original).
+@param len Length of substring (how many bytes from s should be included).
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char				*sub;

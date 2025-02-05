@@ -10,9 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
+/*
+Helper function for ft_strtrim(). Sets and returns k, which is set to
+the first position where string set is NOT present.
+E.g.
+s1 = "abcabc";
+set = "c";
+i = "(a)bcabc" = 0;
+*/
 static int	ft_s1_start(char const *s1, char const *set)
 {
 	int	i;
@@ -40,6 +47,14 @@ static int	ft_s1_start(char const *s1, char const *set)
 	return (i);
 }
 
+/*
+Helper function for ft_strtrim(). Sets and returns k, which is set to
+the last position where string set is NOT present.
+E.g.
+s1 = "abcabc";
+set = "b";
+k = "abcab(c)" = 5;
+*/
 static int	ft_s1_end(char const *s1, char const *set, int k)
 {
 	int	j;
@@ -65,6 +80,26 @@ static int	ft_s1_end(char const *s1, char const *set, int k)
 	return (k);
 }
 
+/*
+Which function:
+	Not a standard function in C.
+Definition:
+	The ft_strtrim() function trims string s1 with the characters of string set.
+	Whichever characters that are part of set, are removed from s1 and the modified
+	string is returned.
+	E.g. 
+	s1 = "abc";
+	set = "aaaaa";
+	result = "bc";
+Return values:
+	Upon success, returns result (string s1 without the characters of string set).
+	Upon memory allocation failure, returns NULL.
+@param i Start position of s1 (the first position where a character from string
+set is NOT present).
+@param j Index for result.
+@param k End position of s1 (the last position where a character from string set
+is NOT present).
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
