@@ -5,15 +5,11 @@ The project aims to get a deeper understanding of what is happening under the ho
 
 💡 **Note**: Weaknesses with the original functions – like not checking for `NULL` in `strlen`, and returning `0` from `atoi` upon error – still remain in my functions. The goal was to create copies of the functions as they are, **not improve them**.
 
----
-
 ## 🧰 **Included Files**  
 - All the functions.
 - A `Makefile`.
 - A header file.
 - A test.c file with implementations of simple tests for each function.
-
----
 
 ## 🧑‍💻 **Cloning the Repository**
 
@@ -22,7 +18,6 @@ This command will clone the repo, and move you to the right directory:
 ```bash
 git clone https://github.com/busedame/libft/ libft && cd libft
 ```
----
 
 ## 🖥️ **How to Compile and Run**  
 
@@ -49,8 +44,6 @@ Ran into some issues trying to compile on MacOS, but this seems to work:
    ```bash
    make
    make test
-
----
 
 ## 🔗**Including Libft in your project**
 
@@ -148,4 +141,6 @@ re: fclean all
 
 .PHONY: all clean fclean re
 ```
+---
+
 *This project was finished Nov 30th 2023.*
